@@ -1,0 +1,30 @@
+class Vehicle:
+    Base class for vehicles.
+    
+    def move(self):
+        Base move method.
+        raise NotImplementedError("Subclasses must implement this method.")
+
+
+class Car(Vehicle):
+    Car class inheriting from Vehicle.
+    
+    def move(self):
+        Overrides the move method for Car.
+        return "Driving 🚗"
+
+
+class Plane(Vehicle):
+    Plane class inheriting from Vehicle.
+    
+    def move(self):
+        Overrides the move method for Plane.
+        return "Flying ✈️"
+
+
+# Example Usage
+if __name__ == "__main__":
+    vehicles = [Car(), Plane()]
+    
+    for vehicle in vehicles:
+        print(vehicle.move())

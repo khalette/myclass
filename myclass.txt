@@ -1,0 +1,50 @@
+class Superhero:
+    Base class for a superhero.
+    
+    def __init__(self, name, alias, power, weakness):
+        self.__name = name  # Encapsulated attribute
+        self.__alias = alias  # Encapsulated attribute
+        self.power = power
+        self.weakness = weakness
+
+    def reveal_identity(self):
+        Reveal the superhero's identity.
+        return f"My name is {self.__name}, but you can call me {self.__alias}."
+
+    def use_power(self):
+        Use the superhero's power.
+        return f"{self.__alias} uses their power: {self.power}!"
+
+    def show_weakness(self):
+        Show the superhero's weakness.
+        return f"{self.__alias}'s weakness is: {self.weakness}."
+
+
+class Sidekick(Superhero):
+    Derived class for a superhero's sidekick.
+
+    def __init__(self, name, alias, power, weakness, loyalty_level):
+        super().__init__(name, alias, power, weakness)
+        self.loyalty_level = loyalty_level
+
+    def assist(self):
+        Sidekick assists the superhero.
+        return f"{self.__alias} is here to assist with loyalty level: {self.loyalty_level}!"
+
+    def reveal_identity(self):
+        Override the reveal_identity method for the sidekick.
+        return f"I'm {self.__alias}, the trusted sidekick of {self._Superhero__name}."
+
+
+# Example Usage
+if __name__ == "__main__":
+    hero = Superhero("Clark Kent", "Superman", "Super Strength", "Kryptonite")
+    sidekick = Sidekick("Robin", "Sidekick", "Agility", "Fear of Heights", "High")
+
+    print(hero.reveal_identity())
+    print(hero.use_power())
+    print(hero.show_weakness())
+    
+    print(sidekick.reveal_identity())
+    print(sidekick.assist())
+    print(sidekick.use_power())
